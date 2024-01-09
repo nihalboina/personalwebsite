@@ -1,55 +1,58 @@
 <!DOCTYPE html>
+
 <html>
-
-<head>
-  <link rel="stylesheet" href="styles.css">
-  <title>Back2Normal</title>
-  <link
-    href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAEAKPAA4DjgAPBq8AEASSAA8FpgATCeUAFAnlABUJ5QASCuQADwalAAAAAQAPBrAAAQABAAABAAABAQAAEgnmABMJ5gAVCuUAGg/fABAFsgAPBrEAAQEBABkN4gAPA5MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADxUUABYJCAsAAAAAAAAAAA8VFQAXBgYLAAAAAAAAAAAPFRUOBgYYCwAAAAAAAAAADxUVCwYGAwsAAAAAAAAAAA8VAxAGBxULAAAAAAAAAAAPFQoGBgIVCwAAAAAAAAAADxUBBhIFFQsAAAAAAAAAAA8VBwYRDBULAAAAAAAAAAAPDAYGABUVCwAAAAAAAAAADwQGBgAVFQsAAAAAAAAAAA8GBhMAFRULAAAAAAAAAAANBgYNABUVCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
-    rel="icon" type="image/x-icon" />
-</head>
-
-<script type="text/javascript">
-  function display_c() {
-    var refresh = 100; // Refresh rate in milli seconds
-    mytime = setTimeout('display_ct()', refresh)
-  }
-  var age, daysBetweenDates;
+  <head>
+    <title>NEWW!! Incomplete tho</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript">
+      function display_c() {
+        var refresh = 100; // Refresh rate in milli seconds
+        mytime = setTimeout('display_ct()', refresh)
+      }
+      var age, daysBetweenDates;
 
 
-  daysBetweenDates = function (d1, d2) {
-    var oneDay = 24 * 60 * 60 * 1000;
-    var diffDays = (d2 - Date.parse(d1)) / oneDay;
-    console.log(diffDays)
-    return diffDays;
-  };
+      daysBetweenDates = function (d1, d2) {
+        var oneDay = 24 * 60 * 60 * 1000;
+        var diffDays = (d2 - Date.parse(d1)) / oneDay;
+        console.log(diffDays)
+        return diffDays;
+      };
 
-  function display_ct() {
-    var x = (daysBetweenDates('Mar 2, 2004 00:00:00', new Date()) / 365).toString().substring(0, 12);
-    document.getElementById('ct').innerHTML = x;
-    display_c();
-  }
-</script>
+      function display_ct() {
+        var x = (daysBetweenDates('Mar 2, 2004 06:54:00', new Date()) / 365).toString().substring(0, 12);
+        document.getElementById('ct').innerHTML = x;
+        display_c();
+      }
+    </script>
+  </head>
+  <body class="bg-dyn" style="text-align:center">
+    <h1 style="color:white; font-size: 200%; font-weight:bolder;">
+      Nihal Boina
+    </h1>
+    <h2 style="color:white;padding-top: 30px;">
+      I'm a
+      <body onload=display_ct();>
+        <span id='ct'></span>
+      </body>
+      year-old
+      <a class="hover-highlight-animation-1" href="./dreams.html">dreamer</a>,
+      <a class="hover-highlight-animation-2" href="./builds.html">builder</a>, &
+      <a class="hover-highlight-animation-3" href="./learnings.html">learner</a>
+    </h2>
 
-<body class="bg-dyn" style="text-align:center">
-  <h1 class="glitch" data-text="Nihal Boina">
-    Nihal Boina
-  </h1>
-  <h2 style="color:white;padding-top: 50px;">
-    I'm a
-    <body onload=display_ct();>
-      <span id='ct'></span>
-    </body>
-    year-old developer
-  </h2>
-  <!-- <button type="button" onclick="myFunction()">Try it</button> -->
-  <h2 style="color:white;">
-    Who specializes in
-    <a class="hover-underline-animation" style="color:greenyellow; text-decoration: none;" href="https://www.researchgate.net/profile/Nihal-Boina-2">A.I.</a>
-    <a class="hover-underline-animation" style="color:orangered;text-decoration: none;" href="https://devpost.com/software/faiza">Web3</a>, &
-    <a class="hover-underline-animation" style="color:yellow;text-decoration: none;" href="https://nihalbo.com">Web Development</a>
-  </h2>
+    <img src="./images/Screenshot 2024-01-08 at 8.10.27 PM.png" alt="Grad pic" style = "width: 200 px; height: 300px; margin-top: 40px;">
 
-</body>
+    <img src="./images/Screenshot 2024-01-08 at 9.37.34 PM.png" alt="Grad pic"
+      style="width: 200 px; height: 200px; margin-top: 40px;">
 
+    <!-- <h2 style="color:white;">
+      Learn more
+      <a class="hover-underline-animation" style="color:greenyellow; text-decoration: none;"
+        href="./aboutme.html">about me</a>,
+      <a class="hover-underline-animation" style="color:orangered;text-decoration: none;"
+        href="./projects.html">my projects</a>, &
+      <a class="hover-underline-animation" style="color:yellow;text-decoration: none;" href="./projects.html">more</a>
+    </h2> -->
+  </body>
 </html>

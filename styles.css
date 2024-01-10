@@ -57,9 +57,22 @@
   background-color: lightseagreen;
 }
 
+.hover-highlight-animation-5 {
+  color: indigo;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.hover-highlight-animation-5:hover {
+  color: white;
+  text-decoration: none;
+  background-color: indigo;
+}
+
 * .hover-underline-animation {
   display: inline-block;
   position: relative;
+  cursor: pointer;
 }
 
 .hover-underline-animation:after {
@@ -78,4 +91,55 @@
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom middle;
+}
+
+.hover-underline-animation:active {
+}
+
+.hover-opac {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.25s;
+}
+
+.hover-opac:hover {
+  opacity: 1;
+}
+
+/* Hide the checkbox */
+#toggle {
+  display: none;
+}
+#toggle1 {
+  display: none;
+}
+#toggle2 {
+  display: none;
+}
+
+/* Styling for the clickable label */
+#clickableText {
+  cursor: pointer;
+  color: red;
+  /* Additional styling as needed */
+}
+
+/* Initially hide the content */
+#hiddenText {
+  display: none;
+  color: blue;
+  /* Additional styling as needed */
+}
+
+/* Display content when checkbox is checked */
+#toggle:checked + #clickableText + #hiddenText {
+  display: block;
+}
+
+#toggle1:checked + #clickableText + #hiddenText {
+  display: block;
+}
+
+#toggle2:checked + #clickableText + #hiddenText {
+  display: block;
 }

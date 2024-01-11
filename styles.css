@@ -69,6 +69,18 @@
   background-color: indigo;
 }
 
+.web-link {
+  color: lightblue;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.web-link:hover {
+  color: black;
+  text-decoration: none;
+  background-color: lightblue;
+}
+
 * .hover-underline-animation {
   display: inline-block;
   position: relative;

@@ -69,6 +69,17 @@
   background-color: indigo;
 }
 
+.hover-highlight-animation-img {
+  background-color: gray;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.hover-highlight-animation-img:hover {
+  text-decoration: none;
+  background-color: whitesmoke;
+}
+
 .web-link {
   color: lightblue;
   text-decoration: none;

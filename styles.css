@@ -19,6 +19,8 @@
   background-color: lightcoral;
   color: white;
   text-decoration: none;
+  border-width: 0px;
+  border-radius: 2px;
 }
 
 .hover-highlight-animation-2 {
@@ -31,6 +33,8 @@
   color: white;
   text-decoration: none;
   background-color: lightgreen;
+  border-width: 0px;
+  border-radius: 2px;
 }
 
 .hover-highlight-animation-3 {
@@ -43,6 +47,8 @@
   color: white;
   text-decoration: none;
   background-color: lightblue;
+  border-width: 0px;
+  border-radius: 2px;
 }
 
 .hover-highlight-animation-4 {

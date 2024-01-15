@@ -77,13 +77,15 @@
 
 .hover-highlight-animation-img {
   background-color: gray;
+  opacity: 0.90;
   text-decoration: none;
-  transition: background-color 0.15s, color 0.15s;
+  transition: background-color 0.15s, opacity 0.15s;
 }
 
 .hover-highlight-animation-img:hover {
   text-decoration: none;
   background-color: whitesmoke;
+  opacity: 1;
 }
 
 .web-link {

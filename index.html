@@ -4,251 +4,188 @@
 <!-- WRITE html code to add frame -->
 
 <html>
-  <head>
-    <title>Nihal's Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
-    <script type="text/javascript">
-      function display_c() {
-        var refresh = 100; // Refresh rate in milli seconds
-        mytime = setTimeout('display_ct()', refresh)
+
+<head>
+  <title>Nihal's Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+  <script type="text/javascript">
+    function display_c() {
+      var refresh = 100; // Refresh rate in milli seconds
+      mytime = setTimeout('display_ct()', refresh)
+    }
+    var age, daysBetweenDates;
+
+
+    daysBetweenDates = function (d1, d2) {
+      var oneDay = 24 * 60 * 60 * 1000;
+      var diffDays = (d2 - Date.parse(d1)) / oneDay;
+      // console.log(diffDays)
+      return diffDays;
+    };
+
+    function display_ct() {
+      var today = new Date();
+      var birthday = new Date('2004-03-02T06:54:00');
+      var age = today.getFullYear() - birthday.getFullYear();
+
+      // Adjust age if birthday hasn't occurred this year yet
+      if (today.getMonth() < birthday.getMonth() ||
+        (today.getMonth() === birthday.getMonth() && today.getDate() < birthday.getDate())) {
+        age--;
       }
-      var age, daysBetweenDates;
 
-
-      daysBetweenDates = function (d1, d2) {
-        var oneDay = 24 * 60 * 60 * 1000;
-        var diffDays = (d2 - Date.parse(d1)) / oneDay;
-        // console.log(diffDays)
-        return diffDays;
-      };
-
-      function display_ct() {
-        var x = (daysBetweenDates('Mar 2, 2004 06:54:00', new Date()) / 365).toString().substring(0, 12);
-        document.getElementById('ct').innerHTML = x;
-        display_c();
+      // Add decimal portion based on progress through the year
+      var nextBirthday = new Date(today.getFullYear(), birthday.getMonth(), birthday.getDate());
+      if (nextBirthday < today) {
+        nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
       }
-    </script>
-  </head>
-  <body class="bg-dyn" style="text-align:center">
-    <h1 style="color:white; font-size: 200%; font-weight:bolder;">
-      Nihal Boina
-    </h1>
-    <h2 style="color:white;padding-top: 30px;">
-      I'm a
-      <body onload=display_ct();>
-        <span id='ct'></span>
-      </body>
-      year-old
-      <a class="hover-highlight-animation-1" href="./dreams.html">dreamer</a>,
-      <a class="hover-highlight-animation-2" href="#Projects">builder</a>, &
-      <a class="hover-highlight-animation-3" href="./learnings.html">learner</a>
-    </h2>
+      var yearProgress = 1 - (nextBirthday - today) / (365.25 * 24 * 60 * 60 * 1000);
+      var preciseAge = age + yearProgress;
 
-    
-    
-    <div style="
+      document.getElementById('ct').innerHTML = preciseAge.toString().substring(0, 12);
+      display_c();
+    }
+  </script>
+</head>
+
+<body class="bg-dyn" style="text-align:center">
+  <h1 style="color:white; font-size: 200%; font-weight:bolder;">
+    Nihal Boina
+  </h1>
+  <h2 style="color:white;padding-top: 30px;">
+    I'm a
+
+    <body onload=display_ct();>
+      <span id='ct'></span>
+    </body>
+    year-old
+    <a class="hover-highlight-animation-1" href="./dreams.html">dreamer</a>,
+    <a class="hover-highlight-animation-2" href="#Projects">builder</a>, &
+    <a class="hover-highlight-animation-3" href="./learnings.html">learner</a>
+  </h2>
+
+
+
+  <div style="
         margin-top: 100px;
         margin-bottom: 100px;
         display: flex; 
         flex-direction: row;
         color:white;
       ">
-      
-        <div style="padding-right: 20px;">
-          <div style="flex-direction: column;">
-            <div style="flex: 1;" >
-              <a href = "https://www.linkedin.com/in/nihalboina/">
-                <img src="./images/icons/new_link.svg" alt="My Happy SVG" class="hover-highlight-animation-img"
-                  style="width: 40px; margin-top: 20px;" />
-              </a>
-            </div>
-            <div style="flex: 1;" >
-              <a href = "https://github.com/nihalboina">
-                <img src="./images/icons/github.svg" alt="My Happy SVG" class="hover-highlight-animation-img"
-                  style="width: 40px; margin-top: 20px;" />
-              </a>
-              
-            </div>
-            <div style="flex: 1;">
-              <a href="https://github.com/nihalboina">
-                <img src="./images/icons/X.svg" alt="My Happy SVG" class="hover-highlight-animation-img"
-                  style="width: 40px; margin-top: 20px;" />
-              </a>
-            </div>
-          </div>
+
+    <div style="padding-right: 20px;">
+      <div style="flex-direction: column;">
+        <div style="flex: 1;">
+          <a href="https://www.linkedin.com/in/nihalboina/">
+            <img src="./images/icons/new_link.svg" alt="My Happy SVG" class="hover-highlight-animation-img"
+              style="width: 40px; margin-top: 20px;" />
+          </a>
         </div>
+        <div style="flex: 1;">
+          <a href="https://github.com/nihalboina">
+            <img src="./images/icons/github.svg" alt="My Happy SVG" class="hover-highlight-animation-img"
+              style="width: 40px; margin-top: 20px;" />
+          </a>
 
-        <div>
-          <img src="./images/pfps/spain.jpeg" alt="Grad pic" style="height: 500px; margin-top: 20px;">       
         </div>
-        
-        
-        <div style="flex: 1; text-align: left; margin-left: 20px;">
-          <p style="font-size: 20px; font-weight: bolder;">About me</p>
-          <p style="font-size: 12px; font-weight: bold;">I'm a current sophomore in the UC Berkeley M.E.T. program studying EECS + business</p>
-          <!-- <p style="flex: 1;"> -->
-          <div style="display:flex; flex-direction: row;">
-            <div id="container">
-              <div class = "buttons">
-                <!-- <div class = "button-skl"> -->
-                  <button class="hover-highlight-animation-1" style="font-size: larger;font-weight:bold;background-color:lightcoral;color:white;text-decoration:none;border:none;">
-                    <a onclick="
-                      const buttonelem = document.querySelector('.s-e-e');
-                      buttonelem.innerHTML = skills;
-                      const all_buttons = document.querySelector('.buttons');
-                      all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle1,regstyle);
-                      all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle2,regstyle);
-                      all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle3,regstyle);
-                      all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(regstyle,activestyle1);
-
-                      ">Skills
-                    </a>
-                  </button>
-                <!-- </div> -->
-                
-                <button class="hover-highlight-animation-2" style="font-size: larger;font-weight:bold;">
-                  <a onclick="
-                        const buttonelem = document.querySelector('.s-e-e');
-                        buttonelem.innerHTML = exp;
-                        const all_buttons = document.querySelector('.buttons');
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle1,regstyle);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle2,regstyle);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle3,regstyle);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(regstyle,activestyle1);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(regstyle,activestyle2);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle1,regstyle);
-                        
-                        " >Experience
-                        
-                  </a>
-                </button>
-                <button class="hover-highlight-animation-3" style="font-size: larger;font-weight:bold;">
-                  <a onclick="
-                        const buttonelem = document.querySelector('.s-e-e');
-                        buttonelem.innerHTML = education;
-                        const all_buttons = document.querySelector('.buttons');
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle1,regstyle);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle2,regstyle);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle3,regstyle);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(regstyle,activestyle1);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(regstyle,activestyle2);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(regstyle,activestyle3);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle1,regstyle);
-                        all_buttons.innerHTML = all_buttons.innerHTML.toString().replace(activestyle2,regstyle);
-
-                        ">Education
-                  </a>
-                </button>
-              </div>
-              
-              <div style = "color: white; background-color: lightcoral; font-size: 13px; margin-top: 10px;" class = "s-e-e">
-                <a>
-                  Languages
-                </a>
-                <div style="font-size: 10px;">
-                  <li>
-                    Python, C++, Java, HTML/CSS, Swift, Javascript, SQL
-                  </li>
-                </div>
-                <div style="margin-top: 10px;">
-                  <a>
-                    Libraries
-                  </a>
-                </div>
-                <div style="font-size: 10px;">
-                  <li>
-                    pandas, PyTorch, OpenCV, NumPy, SKLearn, Selenium, BS4
-                  </li>
-                </div>
-                <div style="margin-top: 10px;">
-                  <a>
-                    OS Experience
-                  </a>
-                </div>
-                <div style="font-size: 10px;">
-                  <li>
-                    Windows, Mac OS, and Linux
-                  </li>
-                </div>
-                <div style="margin-top: 10px;">
-                  <a>
-                    Other
-                  </a>
-                </div>
-                
-                <div style="font-size: 10px;">
-                  <li>
-                    AWS, GCP, AppStoreConnect
-                  </li>
-                </div>
-             </div>
-           </div>
-          
-          </div>
+        <div style="flex: 1;">
+          <a href="https://github.com/nihalboina">
+            <img src="./images/icons/X.svg" alt="My Happy SVG" class="hover-highlight-animation-img"
+              style="width: 40px; margin-top: 20px;" />
+          </a>
         </div>
       </div>
-
-    <div style="margin-top: 200px; color:white; align-items: center;" id = "Projects">
-      <h style="font-size: 40px; font-weight: bolder;">Projects</h>
     </div>
-    <div style="
+
+    <div>
+      <img src="./images/pfps/spain.jpeg" alt="Grad pic" style="height: 500px; margin-top: 20px;">
+    </div>
+
+
+    <div style="flex: 1; text-align: left; margin-left: 20px;">
+      <p style="font-size: 20px; font-weight: bolder;">About me</p>
+      <ul style="font-size: 20px; font-weight: bold; list-style-type: disc; line-height: 2.5;">
+        <li>Current junior in the UC Berkeley M.E.T. program studying EECS + business</li>
+        <li>Love reading, playing guitar, learning and building new things</li>
+        <li>Scroll down to see a few projects I'm proud of</li>
+      </ul>
+      <div style="display:flex; flex-direction: row;">
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <div style="margin-top: 200px; color:white; align-items: center;" id="Projects">
+    <h style="font-size: 40px; font-weight: bolder;">Projects</h>
+  </div>
+  <div style="
             margin-top: 10px;
             display: flex; 
             flex-direction: column;
             color:white;
           ">
-          <div style="
+    <div style="
                       margin-top: 10px;
                       display: flex; 
                       flex-direction: row;
                       color:white;
                     ">
-            <div class = "hover-opac" style="margin-top:20px; flex:1; padding-right: 10px;">
-              <p><a href="https://apps.apple.com/in/app/foodgrind/id1664938134"><img src="./images/projects/foodgrind.webp" alt="Grad pic" style="width: 350 px; height: 350px;"></a>
-              <p>FoodGrind: an app for Cal students to reach quality food decisions</p>
-            </div>
-            <div class = "hover-opac" style="margin-top:20px; flex:1; padding-right: 10px;">
-              <p><a href="https://devpost.com/software/faiza"><img src="./images/projects/Faiza.png" alt="Grad pic" style="width: 350 px; height: 350px;"></a>
-              <p>FAIZA: a website for a decentralized full-stack NFT forum for medical inquiry</p>
-            </div>
-            <div class = "hover-opac" style="margin-top:20px; flex:1">
-              <p><a href="https://www.loudounnow.com/2021/11/05/two-teens-develop-app-to-improve-mental-health/"><img src="./images/projects/philio.jpeg" alt="Grad pic" style="width: 350 px; height: 350px;"></a>
-              <p>Philio: an app for philosophical social media</p>
-            </div>
-          </div>
+      <div class="hover-opac" style="margin-top:20px; flex:1; padding-right: 10px;">
+        <p><a href="https://apps.apple.com/in/app/foodgrind/id1664938134"><img src="./images/projects/prism.png"
+              alt="Grad pic" style="width: 350 px; height: 350px;"></a>
+        <p>Prism: AI powered video editor</p>
+      </div>
+      <div class="hover-opac" style="margin-top:20px; flex:1; padding-right: 10px;">
+        <p><a href="https://apps.apple.com/in/app/foodgrind/id1664938134"><img src="./images/projects/foodgrind.webp"
+              alt="Grad pic" style="width: 350 px; height: 350px;"></a>
+        <p>FoodGrind: an app for Cal students to reach quality food decisions</p>
+      </div>
+      <div class="hover-opac" style="margin-top:20px; flex:1; padding-right: 10px;">
+        <p><a href="https://devpost.com/software/faiza"><img src="./images/projects/Faiza.png" alt="Grad pic"
+              style="width: 350 px; height: 350px;"></a>
+        <p>FAIZA: a website for a decentralized full-stack NFT forum for medical inquiry</p>
+      </div>
+    </div>
 
-          <div style="
+    <div style="
                                 margin-top: 75px;
                                 display: flex; 
                                 flex-direction: row;
                                 color:white;
                               ">
-            
-            
-            <div class="hover-opac" style="flex:1; padding-right: 10px;">
-              <p><a><img src="./images/projects/goldenhands.png" alt="Grad pic" style="width: 350 px; height: 350px;"></a>
-              <p>Goldenhands: a website for finding volunteering opportunities</p>
-            </div>
-            <div class="hover-opac" style="flex:1; padding-right: 10px;">
-              <p><a
-                  href="https://www.myedmaster.com/wp-content/uploads/2021/06/MEM-machine-learning-video.mp4?feature=oembed&autoplay=1"><img
-                    src="./images/projects/a-list-empire.webp" alt="Grad pic" style="width: 350 px; height: 350px;"></a>
-              <p>A-List-Empire: an application to teach students using A.I.</p>
-            </div>
-            <div style="flex:1">
-              <img src="./images/projects/black.png" alt="Grad pic" style="width: 350 px; height: 350px;">
-            </div>
-          </div>
-    </div>
 
-    <div style="margin-top: 200px; color:white;">
+      <div class="hover-opac" style="flex:1; padding-right: 10px;">
+        <p><a href="https://www.loudounnow.com/2021/11/05/two-teens-develop-app-to-improve-mental-health/"><img
+              src="./images/projects/philio.jpeg" alt="Grad pic" style="width: 350 px; height: 350px;"></a>
+        <p>Philio: an app for philosophical social media</p>
+      </div>
+      <!-- <div class="hover-opac" style="flex:1; padding-right: 10px;">
+        <p><a><img src="./images/projects/goldenhands.png" alt="Grad pic" style="width: 350 px; height: 350px;"></a>
+        <p>Goldenhands: a website for finding volunteering opportunities</p>
+      </div> -->
+      <div class="hover-opac" style="flex:1; padding-right: 10px;">
+        <p><a
+            href="https://www.myedmaster.com/wp-content/uploads/2021/06/MEM-machine-learning-video.mp4?feature=oembed&autoplay=1"><img
+              src="./images/projects/a-list-empire.webp" alt="Grad pic" style="width: 350 px; height: 350px;"></a>
+        <p>A-List-Empire: an application to teach students using A.I.</p>
+      </div>
+      <div style="flex:1">
+        <img src="./images/projects/black.png" alt="Grad pic" style="width: 350 px; height: 350px;">
+      </div>
+    </div>
+  </div>
+
+  <!-- <div style="margin-top: 200px; color:white;">
       <a class = "hover-highlight-animation-5" style="font-size: 40px; font-weight: bolder; color:white;" href="./files/NihalBoina_2025.pdf">* Resume *</a>
-    </div>
-    </div>
-    <script>
-      var skills = 
-        '<div style = "color: white; background-color: lightcoral; font-size: 13px; margin-top: 10px;" class = "s-e-e">\
+    </div> -->
+  </div>
+  <script>
+    var skills =
+      '<div style = "color: white; background-color: lightcoral; font-size: 13px; margin-top: 10px;" class = "s-e-e">\
             <a>\
             Languages\
                 </a >\
@@ -288,7 +225,7 @@
                   </li>\
                 </div>\
               </div >';
-      var exp = '<div style = "color: white; background-color: lightgreen; font-size: 13px; margin-top: 10px;" class = "s-e-e">\
+    var exp = '<div style = "color: white; background-color: lightgreen; font-size: 13px; margin-top: 10px;" class = "s-e-e">\
                 <a>\
                   Rimble\
                 </a>\
@@ -319,7 +256,7 @@
                 </div>\
               </div>\
             </div >';
-      var education = '<div style = "color: white; background-color: lightblue; font-size: 13px; margin-top: 10px;" class = "s-e-e">\
+    var education = '<div style = "color: white; background-color: lightblue; font-size: 13px; margin-top: 10px;" class = "s-e-e">\
              <div style="margin-top: 10px;">\
                 <a>\
                 University of California, Berkeley\
@@ -341,10 +278,11 @@
                 </li>\
               </div>\
             </div >';
-      var regstyle = '"font-size: larger;font-weight:bold;"';
-      var activestyle1 = '"font-size: larger;font-weight:bold;background-color:lightcoral;color:white;text-decoration:none;border:none;"';
-      var activestyle2 = '"font-size: larger;font-weight:bold;background-color:lightgreen;color:white;text-decoration:none;border-width:0px,border-radius:2px;border:none;"';
-      var activestyle3 = '"font-size: larger;font-weight:bold;background-color:lightblue;color:white;text-decoration:none;border-width:0px,border-radius:2px;border:none;"';
-    </script>
-  </body>
+    var regstyle = '"font-size: larger;font-weight:bold;"';
+    var activestyle1 = '"font-size: larger;font-weight:bold;background-color:lightcoral;color:white;text-decoration:none;border:none;"';
+    var activestyle2 = '"font-size: larger;font-weight:bold;background-color:lightgreen;color:white;text-decoration:none;border-width:0px,border-radius:2px;border:none;"';
+    var activestyle3 = '"font-size: larger;font-weight:bold;background-color:lightblue;color:white;text-decoration:none;border-width:0px,border-radius:2px;border:none;"';
+  </script>
+</body>
+
 </html>

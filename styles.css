@@ -2,51 +2,155 @@
   background-color: black;
   background-size: 400% 400%;
   height: 100vh;
-  font-family: "Inconsolata", monospace;
+  font-family: "Inter", sans-serif;
 }
+
+@keyframes glitch-char {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+    color: white;
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    opacity: 0.8;
+    color: #00ffff;
+    text-shadow: 2px 2px #ff1744;
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    opacity: 1;
+    color: #ff1744;
+    text-shadow: -2px -2px #00ffff;
+  }
+  60% {
+    transform: translate(2px, 2px);
+    opacity: 0.9;
+    color: #00ffff;
+    text-shadow: 2px -2px #ff1744;
+  }
+  80% {
+    transform: translate(2px, -2px);
+    opacity: 1;
+    color: #ff1744;
+    text-shadow: -2px 2px #00ffff;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+    color: white;
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch-char-intense {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+    color: #00ffff;
+    text-shadow: -3px 0 #ff1744, 3px 3px #00ffff;
+  }
+  25% {
+    transform: translate(-4px, 2px);
+    opacity: 0.7;
+    color: #ff1744;
+    text-shadow: 3px -3px #00ffff, -3px 3px #ff1744;
+  }
+  50% {
+    transform: translate(3px, -3px);
+    opacity: 0.9;
+    color: #00ffff;
+    text-shadow: 3px 0 #ff1744, -3px -3px #00ffff;
+  }
+  75% {
+    transform: translate(-3px, -3px);
+    opacity: 0.8;
+    color: #ff1744;
+    text-shadow: -3px 3px #00ffff, 3px 0 #ff1744;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+    color: #00ffff;
+    text-shadow: -3px 0 #ff1744, 3px 3px #00ffff;
+  }
+}
+
+.char-glitch {
+  display: inline-block;
+  color: white;
+}
+
+.char-glitch.active {
+  animation: glitch-char 300ms infinite;
+}
+
+.char-glitch.intense {
+  animation: glitch-char-intense 200ms infinite;
+}
+
+.text-container {
+  color: white;
+}
+
+.name-glitch {
+  animation: glitch-intense 200ms infinite;
+  color: white;
+  font-size: 300%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.age-glitch {
+  animation: glitch-intense 300ms infinite;
+  color: white;
+  font-weight: bold;
+}
+
 .header {
   margin-top: 0px;
   color: white;
 }
 
 .hover-highlight-animation-1 {
-  color: lightcoral;
+  color: white;
   text-decoration: none;
   transition: background-color 0.15s, color 0.15s;
 }
 
 .hover-highlight-animation-1:hover {
-  background-color: lightcoral;
-  color: white;
+  background-color: white;
+  color: black;
   text-decoration: none;
   border-width: 0px;
   border-radius: 2px;
 }
 
 .hover-highlight-animation-2 {
-  color: lightgreen;
+  color: white;
   text-decoration: none;
   transition: background-color 0.15s, color 0.15s;
 }
 
 .hover-highlight-animation-2:hover {
-  color: white;
+  color: black;
   text-decoration: none;
-  background-color: lightgreen;
+  background-color: white;
   border-width: 0px;
   border-radius: 2px;
 }
 
 .hover-highlight-animation-3 {
-  color: lightblue;
+  color: white;
   text-decoration: none;
   transition: background-color 0.15s, color 0.15s;
 }
 
 .hover-highlight-animation-3:hover {
-  color: white;
+  color: black;
   text-decoration: none;
-  background-color: lightblue;
+  background-color: white;
   border-width: 0px;
   border-radius: 2px;
 }
@@ -89,7 +193,7 @@
 }
 
 .web-link {
-  color: lightblue;
+  color: white;
   text-decoration: none;
   transition: background-color 0.15s, color 0.15s;
 }
@@ -97,7 +201,7 @@
 .web-link:hover {
   color: black;
   text-decoration: none;
-  background-color: lightblue;
+  background-color: white;
 }
 
 * .hover-underline-animation {
@@ -173,4 +277,33 @@
 
 #toggle2:checked + #clickableText + #hiddenText {
   display: block;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.social-icons img {
+  width: 40px;
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+.social-icons img:hover {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(180deg) brightness(1.5);
+  transform: scale(1.1);
+}
+
+/* Update the About Me section line spacing */
+.about-me-list {
+  line-height: 1.8;
+}
+
+/* Update image borders to white */
+img[style*="border"] {
+  border: 2px solid white !important;
 }
